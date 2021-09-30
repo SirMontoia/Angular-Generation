@@ -16,28 +16,28 @@
 
                     <div class="form-group ">
                         <label for="nome"> Nome</label>
-                        <input [(ngModel)] = "user.nome" class="form-control" type="text" name="nome" id="nome" placeholder="Seu Nome">
+                        <input [(ngModel)] = "user.nome" class="form-control" type="text" name="nome" id="nome" placeholder="Seu Nome" (click) = "teste()">
                     </div>
 
                     <div class="form-group ">
-                        <label for="usuario"> Usuário</label>
-                        <input [(ngModel)] = "user.email" class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu nome de guerra">
+                        <label for="usuario">E-mail</label>
+                        <input [(ngModel)] = "user.email" class="form-control" type="text" name="usuario" id="usuario" placeholder="E-mail" (click) = "teste()">
                     </div>
 
                     <div class="form-group ">
                         <label for="form-control"> Link da Foto</label>
-                        <input [(ngModel)] = "user.foto" class="form-control" type="text" name="foto" id="foto" placeholder="Link da sua foto">
+                        <input [(ngModel)] = "user.foto" class="form-control" type="text" name="foto" id="foto" placeholder="Link da sua foto" (click) = "teste()">
                     </div>
 
                     <div class="form-group ">
-                        <label for="senha"> Senha</label>
-                        <input (input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
+                        <label for="senha"> Senha (mínimo de 5 caracteres)</label>
+                        <input (input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha" (click) = "teste()">
                     </div>
 
                     <div class="form-group ">
                         <label for="confirmSenha">Confirmar Senha</label>
                         <input [(ngModel)] = "user.senha" class="form-control" type="password" name="confirmSenha" id="confirmSenha"
-                            placeholder="Confirme a sua senha">
+                            placeholder="Confirme a sua senha" (click) = "teste()">
                     </div>
 
                     <div class="form-group ">

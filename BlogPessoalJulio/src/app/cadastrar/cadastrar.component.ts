@@ -30,6 +30,10 @@ confirmSenha(event: any){
   this.confirmarSenha = event.target.value
 }
 
+teste(){
+  console.log("user" + JSON.stringify(this.user))
+}
+
 tipoUser(event: any) {
  this.tipoUsuario = event.target.value
 }

@@ -1,6 +1,7 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 import { UserDTO } from '../model/UserDTO';
 import { AuthService } from '../service/auth.service';
 
@@ -28,9 +29,20 @@ export class EntrarComponent implements OnInit {
   entrar(){
     this.auth.entrar(this.userDTO).subscribe((resp:UserDTO)=>{
        this.userDTO = resp
+        environment.token = this.userDTO.token
+        environment.nome = this.userDTO.nome
+        environment.id = this.userDTO.id
+        environment.foto = this.userDTO.foto
+
+        console.log(environment.token)
+        console.log(environment.nome)
+        console.log(environment.id)
+        console.log(environment.foto)
+        
+
        this.router.navigate(['/inicio'])
     } ,erro =>{
-      if (erro.status == 500){
+      if (erro.status == 400){
         alert('Usuário ou senha estão incorretos')
       }
     })

@@ -14,12 +14,17 @@ export class AuthService {
   ) { }
 
   entrar(userLogin: UserDTO): Observable<UserDTO>{
-    return this.http.put<UserDTO>('https://blogpessoal29.herokuapp.com/swagger-ui/#/usuarios-controladores/credenciaisUsingPUT', userLogin)
+    return this.http.put<UserDTO>('https://blogpessoal29.herokuapp.com/api/v1/usuario/credenciais', userLogin)
 
   }
 
   cadastrar(user:User): Observable<User>{
-    return this.http.post <User>('https://blogpessoal29.herokuapp.com/swagger-ui/#/usuarios-controladores/salvarUsingPOST_2', User)
+    return this.http.post <User>('https://blogpessoal29.herokuapp.com/api/v1/usuario/salvar', user)
+  }
 
+  logado(){
+    let ok: boolean = false
+
+    return ok 
   }
 }
