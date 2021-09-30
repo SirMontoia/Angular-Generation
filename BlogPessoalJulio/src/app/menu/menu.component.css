@@ -11,3 +11,7 @@ a{
     width: 50px;
     
 }
+
+.imgMelhorar{
+    object-fit: cover;
+}
